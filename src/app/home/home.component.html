@@ -1,0 +1,165 @@
+<br>
+<div class="container">
+  <mat-card>
+    <div class="columns">
+      <div class="column is-3">
+        <mat-form-field>
+          <mat-label>Search By</mat-label>
+          <mat-select [(ngModel)]="opt">
+            <mat-option *ngFor="let op of option" [value]="op">
+              {{op}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="column is-3">
+        <ng-container *ngIf="opt === 'name'; else elseTemplate">
+          <mat-form-field>
+            <input matInput placeholder="search by name" [(ngModel)]="searchText.name">
+          </mat-form-field>
+        </ng-container>
+        <ng-template #elseTemplate>
+          <mat-form-field>
+            <input matInput placeholder="Input" [(ngModel)]="stxt">
+          </mat-form-field>
+        </ng-template>
+      </div>
+      <div class="column is-3">
+        <table>
+          <tr>
+            <td>
+              <button mat-icon-button color="primary" (click)="search()" matTooltip="Search">
+                <mat-icon>search</mat-icon>
+              </button>
+
+            </td>
+            <td>
+              <button mat-icon-button color="primary" (click)="getData()" matTooltip="Refresh Data">
+                <mat-icon>replay</mat-icon>
+              </button>
+
+            </td>
+            <td>
+              <button mat-icon-button color="primary" (click)="exportAsXLSX()" matTooltip="Save Customer List">
+                <mat-icon>save</mat-icon>
+              </button>
+
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="column is-3">
+        <button mat-raised-button color="primary" [routerLink]="[ '/addCustomer']">
+          <mat-icon>add</mat-icon>
+          Add Customer
+        </button>
+      </div>
+    </div>
+  </mat-card>
+
+</div>
+
+
+<div class="container">
+  <mat-card class="is-centred">
+    <table class="table is-fullwidth is-hoverable   is-hidden-touch">
+      <thead>
+        <tr>
+          <th><abbr>File No.</abbr></th>
+          <th><abbr>Pan No.</abbr></th>
+          <th><abbr>Name</abbr></th>
+          <th><abbr>DOB</abbr></th>
+          <!-- <th><abbr>GST No.</abbr></th> -->
+          <th><abbr>Mobile No.</abbr></th>
+          <!-- <th><abbr>Email ID</abbr></th>
+          <th><abbr>Address</abbr></th> -->
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customers | filter:searchText ">
+          <td>{{customer.fileid}}</td>
+          <td>{{customer.panid}}</td>
+          <td>{{customer.name}}</td>
+          <td>{{customer.dob}}</td>
+          <!-- <td>{{customer.gstno}}</td> -->
+          <td>{{customer.mobileno}}</td>
+          <!-- <td>{{customer.email}}</td>
+          <td>{{customer.addr}}</td> -->
+          <td style="padding: 0;"> <button matTooltip="Edit"
+              [routerLink]="[ '/editCustomer', {panid : customer.panid} ]" mat-icon-button>
+              <mat-icon>create</mat-icon>
+            </button> &nbsp;&nbsp;
+            <button matTooltip="View Pan Detail" mat-icon-button
+              [routerLink]="[ '/showData',{panid : customer.panid,showOf: 'pan'} ]">
+              <mat-icon>visibility</mat-icon>
+            </button>
+            &nbsp;&nbsp;
+            <button matTooltip="View GST Detail" mat-icon-button
+              [routerLink]="[ '/showData',{panid : customer.panid,showOf: 'gst' } ]">
+              <mat-icon>visibility</mat-icon>
+            </button>
+            &nbsp;&nbsp;
+            <button matTooltip="View Tan Detail" mat-icon-button
+              [routerLink]="[ '/showData',{panid : customer.panid ,showOf: 'tan'} ]">
+              <mat-icon>visibility</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+    <table class="table is-fullwidth is-hoverable   is-hidden-desktop">
+      <thead>
+        <tr>
+          <th><abbr>File No.</abbr></th>
+          <th><abbr>Pan No.</abbr></th>
+          <th><abbr>Name</abbr></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customers | filter:searchText ">
+          <td>{{customer.fileid}}</td>
+          <td>{{customer.panid}}</td>
+          <td>{{customer.name}}</td>
+          <td style="padding: 0;">
+
+
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+
+
+              <button matTooltip="Edit" [routerLink]="[ '/editCustomer', {panid : customer.panid} ]" mat-menu-item>
+                <mat-icon>create</mat-icon>
+                <span>Edit</span>
+              </button>
+              <button mat-menu-item [routerLink]="[ '/showData',{panid : customer.panid,showOf: 'pan'} ]">
+                <mat-icon>visibility</mat-icon>
+                <span>View Pan Detail</span>
+              </button>
+
+              <button mat-menu-item [routerLink]="[ '/showData',{panid : customer.panid,showOf: 'gst' } ]">
+                <mat-icon>visibility</mat-icon>
+                <span>View GST Detail</span>
+              </button>
+
+              <button mat-menu-item [routerLink]="[ '/showData',{panid : customer.panid ,showOf: 'tan'} ]">
+                <mat-icon>visibility</mat-icon>
+                <span>View Tan Detail</span>
+              </button>
+            </mat-menu>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </mat-card>
+
+</div>

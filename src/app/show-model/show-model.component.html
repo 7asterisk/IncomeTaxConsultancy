@@ -1,0 +1,139 @@
+<br><br>
+<div class="has-text-centered">
+  <h2 class="has-size-4 primary"> Customer Details </h2>
+</div>
+<div class="container">
+  <mat-card class="column is-6 is-offset-3">
+    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+      <tr>
+
+        <td>
+          File No.:
+        </td>
+        <td>
+          {{dataToAdd.fileid}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Name:
+        </td>
+        <td>
+          {{dataToAdd.name}}
+        </td>
+      </tr>
+
+      <!-- pan details -->
+      <tr *ngIf="showof === 'pan'">
+        <td>
+          Pan ID:
+        </td>
+        <td>
+          {{dataToAdd.panid}}
+        </td>
+      </tr>
+      <tr *ngIf="showof === 'pan'">
+        <td>
+          IT Password:
+        </td>
+        <td>
+          {{dataToAdd.panpass}}
+        </td>
+      </tr>
+
+      <!-- gst details -->
+      <tr *ngIf="showof === 'gst'">
+        <td>
+          GST No.:
+        </td>
+        <td>
+          {{dataToAdd.gstno}}
+        </td>
+      </tr>
+      <tr *ngIf="showof === 'gst'">
+        <td>
+          GST ID.:
+        </td>
+        <td>
+          {{dataToAdd.gstid}}
+        </td>
+      </tr>
+      <tr *ngIf="showof === 'gst'">
+        <td>
+          GST Password:
+        </td>
+        <td>
+          {{dataToAdd.gstpass}}
+        </td>
+      </tr>
+
+      <!-- tan details -->
+
+      <tr *ngIf="showof === 'tan'">
+        <td>
+          Tan No.:
+        </td>
+        <td>
+          {{dataToAdd.tanno}}
+        </td>
+      </tr>
+      <tr *ngIf="showof === 'tan'">
+        <td>
+          Tan Id.:
+        </td>
+        <td>
+          {{dataToAdd.tanid}}
+        </td>
+      </tr>
+      <tr *ngIf="showof === 'tan'">
+        <td>
+          Tan Password:
+        </td>
+        <td>
+          {{dataToAdd.tanpass}}
+        </td>
+      </tr>
+
+      <!-- general details -->
+      <tr>
+        <td>
+          Date Of Birth:
+        </td>
+        <td>
+          {{dataToAdd.dob}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Mobile No:
+        </td>
+        <td>
+          {{dataToAdd.mobileno}}
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Email:
+        </td>
+        <td>
+          {{dataToAdd.email}}
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Address:
+        </td>
+        <td>
+          {{dataToAdd.addr}}
+        </td>
+      </tr>
+    </table>
+    <p class="has-text-centered">
+      <button matTooltip="Back To All Details" mat-raised-button color="primary" [routerLink]="[ '/home']">
+        <mat-icon>keyboard_backspace</mat-icon>
+      </button>
+    </p>
+  </mat-card>
+</div>

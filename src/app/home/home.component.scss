@@ -1,0 +1,9 @@
+
+.column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .column > * {
+    width: 100%;
+  }

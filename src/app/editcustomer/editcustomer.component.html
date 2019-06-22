@@ -1,0 +1,178 @@
+<br>
+<div class="has-text-centered">
+  <h2 class="is-size-3">
+    Edit Customer
+  </h2>
+</div>
+<br>
+<div class="container">
+  <div class=" justify-content-md-center">
+    <div class="column is-8 is-offset-2">
+      <mat-card>
+
+
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input [(ngModel)]="dataToAdd.fileid" matInput placeholder="File No.">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput [(ngModel)]="dataToAdd.name" placeholder="Name">
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="DOB" [(ngModel)]="dataToAdd.dob" type="text">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput [(ngModel)]="dataToAdd.email" placeholder="email">
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input [(ngModel)]="dataToAdd.panid" matInput placeholder="Pan Id.">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input [(ngModel)]="dataToAdd.panpass" matInput placeholder="IT Password">
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput [(ngModel)]="dataToAdd.gstno" placeholder="GST No.">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput [(ngModel)]="dataToAdd.gstid" placeholder="GST ID.">
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput [(ngModel)]="dataToAdd.gstpass" placeholder="GST Password">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput [(ngModel)]="dataToAdd.tanno" placeholder="Tan No.">
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput [(ngModel)]="dataToAdd.tanid" placeholder="Tan ID.">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput [(ngModel)]="dataToAdd.tanpass" placeholder="Tan Password">
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput [(ngModel)]="dataToAdd.mobileno" placeholder="Mobile No">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput type="text" [(ngModel)]="dataToAdd.addr" placeholder="Customer Addres">
+              </mat-form-field>
+
+            </td>
+          </tr>
+        </table>
+
+
+
+        <!-- <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input [(ngModel)]="dataToAdd.fileid" matInput placeholder="File No.">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput [(ngModel)]="dataToAdd.name" placeholder="Name">
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input [(ngModel)]="dataToAdd.panid" matInput placeholder="Pan Id.">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input [(ngModel)]="dataToAdd.panpass" matInput placeholder="IT Password">
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput [(ngModel)]="dataToAdd.gstno" placeholder="GST No.">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput [(ngModel)]="dataToAdd.gstpass" placeholder="GST Password">
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="DOB" [(ngModel)]="dataToAdd.dob" type="text">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput [(ngModel)]="dataToAdd.mobileno" placeholder="Mobile No">
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput [(ngModel)]="dataToAdd.email" placeholder="email">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput type="text" [(ngModel)]="dataToAdd.addr" placeholder="Customer Addres">
+              </mat-form-field>
+
+            </td>
+          </tr>
+        </table> -->
+        <p class="has-text-centered">
+          <button mat-raised-button (click)="addItem()" (click)="openSnackBar('Editor Successfully', 'ok')"
+            color="primary">Submit</button>
+          &nbsp;&nbsp;
+          <button mat-raised-button (click)="deleteItem()" color="warn">Delete</button>
+        </p>
+        <!-- </form> -->
+      </mat-card>
+
+    </div>
+  </div>
+</div>
